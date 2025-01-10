@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 const initialGameBoard = [
   [null, null, null],
   [null, null, null],
@@ -14,6 +13,7 @@ export default function GameBoard() {
     setGameBoard((prevGameBoard) => { 
       const updatedBoard = [...prevGameBoard.map((innerArray) => [ ...innerArray ])];
       updatedBoard[rowIndex][colIndex] = 'X';
+
       return updatedBoard; 
     });
   }
