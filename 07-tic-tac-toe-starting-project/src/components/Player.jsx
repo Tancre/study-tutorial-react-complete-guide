@@ -5,8 +5,11 @@ export default function Player({ name, symbol }) {
   
   const handleClick = () => setIsEditing((editing) => !editing );
 
-  let playerName = !isEditing ? <span className="player-name">{name}</span> : <input type="text" required value={name} />;
-  let btnCaption = !isEditing ? "edit" : "save";
+  const playerName = isEditing 
+  ? <input type="text" required value={name} /> 
+  : <span className="player-name">{name}</span>;
+
+  const btnCaption = isEditing ? "save" : "edit";
 
   return ( 
     <li>
